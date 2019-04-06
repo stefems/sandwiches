@@ -1,3 +1,16 @@
+Sandwiches Notes
+1. clone this ish
+2. npm install
+3. brew install mongodb
+4. sudo mkdir -p /data/db
+5. sudo chown -R `id -un` /data/db
+6. mongod (in one terminal, leave running)
+7. mongo (in one terminal, then when the mongo console loads, run: use sandwhiches) 
+8. npm run dev (in one terminal, will spin up the client server and backend server)
+
+
+
+
 # simple-react-full-stack
 
 [![Build Status](https://travis-ci.org/crsandeep/simple-react-full-stack.svg?branch=master)](https://travis-ci.org/crsandeep/simple-react-full-stack)
