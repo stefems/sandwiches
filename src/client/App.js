@@ -3,9 +3,7 @@ import './app.css';
 import ReactMapGL, { Marker } from 'react-map-gl';
 
 
-var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
-const isProduction = process.env.NODE_ENV === 'production';
-mapboxgl.accessToken = isProduction ? process.env.MAPBOX_TOKEN + "" : require("../../.env.js").MAPBOX_TOKEN;
+const accessToken = process.env.MAPBOX_TOKEN ? process.env.MAPBOX_TOKEN + "" : require("../../.env.js").MAPBOX_TOKEN;
 console.log(process.env);
 
 class App extends Component {
@@ -56,7 +54,7 @@ class App extends Component {
         <ReactMapGL
           width='100vw'
           height='100vh'
-          mapboxApiAccessToken={mapboxgl.accessToken}
+          mapboxApiAccessToken={accessToken}
           {...viewport} onViewportChange={(viewport) => this.onViewportChange(viewport)}
         >
           {you_are_here ? 
