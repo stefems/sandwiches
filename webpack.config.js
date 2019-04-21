@@ -15,15 +15,8 @@ module.exports = () => {
       return prev;
     }, {});
   } else {
-    console.log(process.env);
-    const env = process.env;
-    envKeys = Object.keys(env).reduce((prev, next) => {
-      prev[`process.env.${next}`] = JSON.stringify(env[next]);
-      return prev;
-    }, {});
+    envKeys = {'process.env.MAPBOX_TOKEN': process.env.MAPBOX_TOKEN};
   }
-  console.log(dotenv.config().parsed);
-  console.log(envKeys);
 
   return {
     entry: ['babel-polyfill', './src/client/index.js'],
