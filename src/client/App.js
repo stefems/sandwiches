@@ -6,7 +6,7 @@ import ReactMapGL, { Marker } from 'react-map-gl';
 var mapboxgl = require('mapbox-gl/dist/mapbox-gl.js');
 const isProduction = process.env.NODE_ENV === 'production';
 mapboxgl.accessToken = isProduction ? process.env.MAPBOX_TOKEN + "" : require("../../.env.js").MAPBOX_TOKEN;
-console.log(mapboxgl.accessToken);
+console.log(process.env);
 
 class App extends Component {
 
