@@ -7,11 +7,21 @@ const dotenv = require('dotenv');
 const outputDirectory = 'dist';
 
 module.exports = () => {
-  const env = dotenv.config().parsed;
-  const envKeys = Object.keys(env).reduce((prev, next) => {
-    prev[`process.env.${next}`] = JSON.stringify(env[next]);
-    return prev;
-  }, {});
+  let envKeys;
+  if (dotenv.config().parsed) {
+    const env = dotenv.config().parsed;
+    envKeys = Object.keys(env).reduce((prev, next) => {
+      prev[`process.env.${next}`] = JSON.stringify(env[next]);
+      return prev;
+    }, {});
+  } else {
+    const env = process.env;
+    envKeys = Object.keys(env).reduce((prev, next) => {
+      prev[`process.env.${next}`] = JSON.stringify(env[next]);
+      return prev;
+    }, {});
+  }
+
   return {
     entry: ['babel-polyfill', './src/client/index.js'],
     output: {
