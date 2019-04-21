@@ -7,7 +7,8 @@ Sandwiches Notes
 6. mongod (in one terminal, leave running)
 7. mongo (in one terminal, then when the mongo console loads, run: use sandwhiches) 
 8. npm run dev (in one terminal, will spin up the client server and backend server)
-
+9. npm build (for production deploy aka you don't need a dev server, you just need static files that will built into the dist folder)
+10. npm start (will then run the production server)
 
 
 
