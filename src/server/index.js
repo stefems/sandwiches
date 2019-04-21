@@ -26,11 +26,14 @@ app.use(session({ secret: 'sandwiches', cookie: { maxAge: 60000 }, resave: false
 
 if(!isProduction) {
   app.use(errorHandler());
+  mongoose.connect('mongodb://localhost/sandwiches');
+  mongoose.set('debug', true);
+} else {
+  mongoose.connect(process.env.MONGODB_URI);
 }
 
 //Configure Mongoose
-mongoose.connect('mongodb://localhost/sandwiches');
-mongoose.set('debug', true);
+
 
 require('./models/Users');
 require('./config/passport');
