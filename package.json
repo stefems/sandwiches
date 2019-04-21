@@ -4,7 +4,7 @@
   "description": "Boilerplate to build a full stack web application using React, Node.js, Express and Webpack.",
   "main": "src/server/index.js",
   "scripts": {
-    "build": "webpack --mode production --env.MAPBOX_API=process.env.MAPBOX_API",
+    "build": "webpack --mode production",
     "start": "npm run build && node src/server/index.js",
     "client": "webpack-dev-server --mode development --devtool inline-source-map --hot",
     "server": "nodemon src/server/index.js",
@@ -44,6 +44,7 @@
     "cors": "^2.8.5",
     "crypto": "^1.0.1",
     "css-loader": "^2.0.0",
+    "dotenv": "^7.0.0",
     "errorhandler": "^1.5.0",
     "eslint": "^5.0.0",
     "eslint-config-airbnb": "^17.0.0",
