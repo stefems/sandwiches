@@ -3,8 +3,7 @@ import './app.css';
 import ReactMapGL, { Marker } from 'react-map-gl';
 
 
-// const accessToken = process.env.MAPBOX_TOKEN ? process.env.MAPBOX_TOKEN + "" : require("../../.env.js").MAPBOX_TOKEN;
-console.log(process.env);
+const accessToken = process.env.MAPBOX_TOKEN;
 
 class App extends Component {
 

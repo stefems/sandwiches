@@ -15,13 +15,15 @@ module.exports = () => {
       return prev;
     }, {});
   } else {
-    console.log("\n------------------------------\n" + process.env + "\n------------------------------\n");
+    console.log(process.env);
     const env = process.env;
     envKeys = Object.keys(env).reduce((prev, next) => {
       prev[`process.env.${next}`] = JSON.stringify(env[next]);
       return prev;
     }, {});
   }
+  console.log(dotenv.config().parsed);
+  console.log(envKeys);
 
   return {
     entry: ['babel-polyfill', './src/client/index.js'],
